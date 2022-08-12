@@ -3,9 +3,6 @@ import cors from "cors"
 import { router1 } from "../routes/router1.js"
 import { router2 } from "../routes/router2.js"
 import { DB } from "../utils/db.js"
-// const express = require("express")
-// const cors = require("cors")
-// const router = require("./rou")
 
 
 class App {
@@ -13,7 +10,7 @@ class App {
         this.app = express()
         this.setMiddleWare()
         this.setRouting()
-        this.setDatabase
+        this.setDatabase()
     }
     setMiddleWare() {
         this.app.use(express.json())

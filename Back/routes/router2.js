@@ -7,6 +7,4 @@ router2.get('/router2/get', (req, res) => {
 })
 
 
-
-// module.exports = router
 export {router2}

@@ -11,5 +11,4 @@ router1.get('/router1/get', (req, res) => {
 })
 
 
-// module.exports = router
 export {router1}
