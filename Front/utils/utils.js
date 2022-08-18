@@ -9,16 +9,19 @@ async function POST(URI, body={}) {
         return result
     } catch (e) { throw e }
 }
-function newElement(tagName, attributes) {
-    let newTag = document.createElement(tagName)
-    if (attributes["id"]) { newTag.id = attributes["id"] }
-    if (attributes["className"]) { newTag.className = attributes["className"] }
-    if (attributes["innerText"]) { newTag.innerText = attributes["innerText"] }
+function newElement(attributes) {
+    if (attributes["tagName"]) {
+        let element = document.createElement(attributes["tagName"])
+        delete attributes["tagName"]
+        for (let attribute in attributes) { element[attribute] = attributes[attribute] }
 
-    return newTag
+        return element
+    } else { console.log("Please check attributes")}
 }
 function RemoveChildElements(element) {
     while (element.hasChildNodes()) {
         element.removeChild(element.firstChild)
     }
 }
+
+export { POST, newElement, RemoveChildElements }

@@ -1,22 +1,26 @@
-async function POST(URI, body={}) {
-    let response = await fetch(URI, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(body)
-    })
-    let result = await response.json()
-    return result
-}
-function newElement(tagName, attributes) {
-    let newTag = document.createElement(tagName)
-    if (attributes["id"]) { newTag.id = attributes["id"] }
-    if (attributes["className"]) { newTag.className = attributes["className"] }
-    if (attributes["innerText"]) { newTag.innerText = attributes["innerText"] }
+import { POST, newElement, RemoveChildElements } from "./utils/utils.js"
 
-    return newTag
-}
-function RemoveChildElements(element) {
-    while (element.hasChildNodes()) {
-        element.removeChild(element.firstChild)
-    }
-}
+const table = document.querySelector(".content")
+const child = newElement({
+    tagName: "h1",
+    innerText: "asdf",
+    className: "content__child1"
+})
+table.append(child)
+
+
+
+
+const Info = [
+    {id: 1, name: "abcd", joinned: "2022-01-01"},
+    {id: 2, name: "abcd", joinned: "2022-01-01"},
+    {id: 3, name: "abcd", joinned: "2022-01-01"},
+    {id: 4, name: "abcd", joinned: "2022-01-01"},
+    {id: 5, name: "abcd", joinned: "2022-01-01"},
+    {id: 6, name: "abcd", joinned: "2022-01-01"},
+]
+if (1) {console.log("Haha")}
+console.log(Info, Info.length)
+console.log(Object.keys(Info))
+console.log(Object.keys(Info[0]))
+for (const i of Info) (console.log(i, Object.keys(i)))
