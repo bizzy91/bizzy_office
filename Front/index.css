@@ -1,0 +1,40 @@
+/* 영역 */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-in-area {
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up-area {
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 구성 요소 */
+.input {
+    display: block;
+    margin: 20px 0;
+    width: 200px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+}
+.btn {
+    display: block;
+    margin: 10px 0;
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: tomato;
+    color: #FFFFFF;
+}

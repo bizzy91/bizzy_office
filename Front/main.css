@@ -1,0 +1,23 @@
+/* 영역 */
+.content {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* 구성 요소 */
+table {
+    margin: 10px;
+    border-collapse: collapse;
+}
+tr {
+    padding: 30px;
+}
+th {
+    padding: 15px;
+    background-color: #AAAAAA;
+    border-bottom: 1px solid;
+}
+td {
+    padding: 15px;
+}

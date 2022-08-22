@@ -1,32 +1,38 @@
 import mysql from "mysql2"
 
+
 class DB {
-    constructor() {
+    constructor(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) {
         this.pool = mysql.createPool({
-            host: "localhost",
-            user: "root",
-            password: "12345678",
-            database: "DUTY_ARTIFRIENDS_DB"
+            host: DB_HOST,
+            user: DB_USER,
+            password: DB_PASSWORD,
+            database: DB_NAME
         })
         this.promisePool = this.pool.promise()
     }
-    async exec(sql) {
-        let [rows, fields] = await this.promisePool.query(sql)
+    exec(sql) {
+        let [rows, fields] = this.promisePool.query(sql)
         console.log(rows)
-        // return rows
+        return rows
     }
-    // async end() {
-    //     this.pool.end()
-    // }
+    end() {
+        this.pool.end()
+    }
 }
 
 // const q1 = "select * from MEMBER_TB limit 2;"
 // const q2 = "select * from ATTENDANCE_TB limit 2;"
-// const db = new DB()
+// const db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
 
-// db.exec(q1)
-// db.exec(q2)
-// db.end()
+// const f1 = async () => {
+//     await db.exec(q1)
+//     await db.exec(q2)
+//     await db.end()
+
+// };
+
+// f1();
 
 // const pool = mysql.createPool({
 //     host: "localhost",
